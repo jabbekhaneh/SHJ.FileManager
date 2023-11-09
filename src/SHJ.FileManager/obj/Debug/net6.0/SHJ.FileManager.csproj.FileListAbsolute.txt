@@ -1,0 +1,12 @@
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\bin\Debug\net6.0\SHJ.FileManager.deps.json
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\bin\Debug\net6.0\SHJ.FileManager.dll
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\bin\Debug\net6.0\SHJ.FileManager.pdb
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.csproj.AssemblyReference.cache
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.GeneratedMSBuildEditorConfig.editorconfig
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.AssemblyInfoInputs.cache
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.AssemblyInfo.cs
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.csproj.CoreCompileInputs.cache
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.dll
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\refint\SHJ.FileManager.dll
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\SHJ.FileManager.pdb
+E:\mygit\SHJ.FileManager\src\SHJ.FileManager\obj\Debug\net6.0\ref\SHJ.FileManager.dll

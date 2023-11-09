@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\29169db6-981a-4d2a-8d86-12f9968d11e8.jpg",
+      "PackagePath": "staticwebassets\\29169db6-981a-4d2a-8d86-12f9968d11e8.jpg"
+    },
+    {
+      "Id": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\440d278a-4d37-45b5-84c8-a9eb9afe6cc0.png",
+      "PackagePath": "staticwebassets\\440d278a-4d37-45b5-84c8-a9eb9afe6cc0.png"
+    },
+    {
+      "Id": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\83cafb7e-92c5-42ef-a252-2efc78f65562.png",
+      "PackagePath": "staticwebassets\\83cafb7e-92c5-42ef-a252-2efc78f65562.png"
+    },
+    {
+      "Id": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\myfile\\296a32fd-3299-41b9-a30d-8f8062a804f6.jpg",
+      "PackagePath": "staticwebassets\\myfile\\296a32fd-3299-41b9-a30d-8f8062a804f6.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SHJ.FileManager.Sample.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.SHJ.FileManager.Sample.props",
+      "PackagePath": "build\\SHJ.FileManager.Sample.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.SHJ.FileManager.Sample.props",
+      "PackagePath": "buildMultiTargeting\\SHJ.FileManager.Sample.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.SHJ.FileManager.Sample.props",
+      "PackagePath": "buildTransitive\\SHJ.FileManager.Sample.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

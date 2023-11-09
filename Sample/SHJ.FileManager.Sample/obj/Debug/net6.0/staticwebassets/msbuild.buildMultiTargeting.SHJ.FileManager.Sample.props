@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SHJ.FileManager.Sample.props" />
+</Project>
