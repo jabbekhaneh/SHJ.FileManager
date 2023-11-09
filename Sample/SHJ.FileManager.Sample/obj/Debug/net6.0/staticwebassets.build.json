@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YnZBlNHTwIochTeKUTZNIMLU3XvrvHAb11Viu61OljA=",
+  "Hash": "A4R5kZra1nMdzcrFw4LrYUfFIbjo3ZW/1RW6SZU6tcs=",
   "Source": "SHJ.FileManager.Sample",
   "BasePath": "_content/SHJ.FileManager.Sample",
   "Mode": "Default",
@@ -15,74 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [
-    {
-      "Identity": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\29169db6-981a-4d2a-8d86-12f9968d11e8.jpg",
-      "SourceId": "SHJ.FileManager.Sample",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\",
-      "BasePath": "_content/SHJ.FileManager.Sample",
-      "RelativePath": "29169db6-981a-4d2a-8d86-12f9968d11e8.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\29169db6-981a-4d2a-8d86-12f9968d11e8.jpg"
-    },
-    {
-      "Identity": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\440d278a-4d37-45b5-84c8-a9eb9afe6cc0.png",
-      "SourceId": "SHJ.FileManager.Sample",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\",
-      "BasePath": "_content/SHJ.FileManager.Sample",
-      "RelativePath": "440d278a-4d37-45b5-84c8-a9eb9afe6cc0.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\440d278a-4d37-45b5-84c8-a9eb9afe6cc0.png"
-    },
-    {
-      "Identity": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\83cafb7e-92c5-42ef-a252-2efc78f65562.png",
-      "SourceId": "SHJ.FileManager.Sample",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\",
-      "BasePath": "_content/SHJ.FileManager.Sample",
-      "RelativePath": "83cafb7e-92c5-42ef-a252-2efc78f65562.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\83cafb7e-92c5-42ef-a252-2efc78f65562.png"
-    },
-    {
-      "Identity": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\myfile\\296a32fd-3299-41b9-a30d-8f8062a804f6.jpg",
-      "SourceId": "SHJ.FileManager.Sample",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\mygit\\SHJ.FileManager\\Sample\\SHJ.FileManager.Sample\\wwwroot\\",
-      "BasePath": "_content/SHJ.FileManager.Sample",
-      "RelativePath": "myfile/296a32fd-3299-41b9-a30d-8f8062a804f6.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\myfile\\296a32fd-3299-41b9-a30d-8f8062a804f6.jpg"
-    }
-  ]
+  "Assets": []
 }

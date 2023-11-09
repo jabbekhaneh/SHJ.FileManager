@@ -28,7 +28,7 @@ internal class UploadToolser
         newFileName = myUniqueFileName + fileExtension;
 
 
-        fileName = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot" + "/" + path, newFileName);
+        fileName = Path.Combine(Directory.GetCurrentDirectory(), path, newFileName);
         if (File.Exists(fileName))
         {
             File.Delete(fileName);

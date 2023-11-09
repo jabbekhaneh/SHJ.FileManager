@@ -42,3 +42,6 @@ E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\obj\Debug\net6.0\SHJ.File
 E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\obj\Debug\net6.0\SHJ.FileManager.Sample.genruntimeconfig.cache
 E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\obj\Debug\net6.0\ref\SHJ.FileManager.Sample.dll
 E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\bin\Debug\net6.0\SHJ.FileManager.Sample.staticwebassets.runtime.json
+E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+E:\mygit\SHJ.FileManager\Sample\SHJ.FileManager.Sample\bin\Debug\net6.0\Newtonsoft.Json.dll

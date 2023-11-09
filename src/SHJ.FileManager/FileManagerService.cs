@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using SHJ.FileManager.Contracts;
 using SHJ.FileManager.Entities;
 using SHJ.FileManager.Extentions;
 using SHJ.FileManager.Options;
 using SHJ.FileManager.SQL;
+using System.IO;
 
 namespace SHJ.FileManager;
 
@@ -12,8 +14,8 @@ internal class FileManagerService : IFileManagerService
 {
     private readonly IDocumentRepository _repository;
     private readonly FileManagerOptions _options;
-
-    public FileManagerService(IOptions<FileManagerOptions> options)
+    private IHostingEnvironment _environment;
+    public FileManagerService(IOptions<FileManagerOptions> options, IHostingEnvironment environment)
     {
         _options = options.Value;
         if (options.Value.Database == DatabaseType.MSSQL)
@@ -24,11 +26,17 @@ internal class FileManagerService : IFileManagerService
         {
             throw new Exception("FileManager : The database is not supported");
         }
+        _environment = environment;
     }
 
     public async Task<DocumentRecord> UploadInServer(IFormFile file)
     {
-        var document = UploadToolser.Upload(file, "wwwroot");
+        var existDirectory = _environment.ContentRootPath + "wwwroot/";
+        if (!Directory.Exists(existDirectory))
+        {
+            Directory.CreateDirectory(existDirectory);
+        }
+        var document = UploadToolser.Upload(file, existDirectory);
         document.SetUploadType(UploadType.InServer);
         await _repository.InsertAsync(document);
         return document;
@@ -36,7 +44,12 @@ internal class FileManagerService : IFileManagerService
 
     public async Task<DocumentRecord> UploadInServer(IFormFile file, string path)
     {
-        var document = UploadToolser.Upload(file, path);
+        var existDirectory = _environment.ContentRootPath + "wwwroot/" + path;
+        if (!Directory.Exists(existDirectory))
+        {
+            Directory.CreateDirectory(existDirectory);
+        }
+        var document = UploadToolser.Upload(file, existDirectory);
         document.SetUploadType(UploadType.InServer);
         await _repository.InsertAsync(document);
         return document;
