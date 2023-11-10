@@ -37,9 +37,13 @@ app.UseStaticFiles();
 app.UseFileManager();
 ```
 
-How to change database Supports database mssql,mongoDb
+How to change database Supports database 
 ```csharp
 option.Database= DatabaseType.MSSQL
 ```
 
 ### UI Framework Options
+
+
+
+# Completing soon ...
