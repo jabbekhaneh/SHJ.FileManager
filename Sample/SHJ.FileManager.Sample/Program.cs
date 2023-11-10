@@ -10,6 +10,7 @@ builder.Services.AddSwaggerGen();
 /////////////////////////////////
 builder.Services.AddFileManager(option =>
 {
+    
     option.DatabaseName = "dbFileManager";
     option.ConnectionString = conntection;
 });

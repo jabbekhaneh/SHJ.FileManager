@@ -10,19 +10,23 @@ namespace SHJ.FileManager.Controllers
     public class FileManagerController : ControllerBase
     {
         private readonly IFileManagerService _services;
-        private IHostingEnvironment _environment;
-        public FileManagerController(IFileManagerService services, IHostingEnvironment environment)
+        
+        public FileManagerController(IFileManagerService services)
         {
             _services = services;
-            _environment = environment;
         }
 
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
         {
-            
-        
-            await _services.UploadInServer(file);
+            await _services.UploadInServerAsync(file,"Folder_1/Folder_2");
+            return Ok();
+        }
+
+        [HttpPost("Many")]
+        public async Task<IActionResult> UploadMany(List<IFormFile> files)
+        {
+            await _services.UploadInServerAsync(files, "Folder_200");
             return Ok();
         }
     }

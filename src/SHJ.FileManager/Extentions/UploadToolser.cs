@@ -5,30 +5,25 @@ using SixLabors.ImageSharp.Formats;
 using System.Net.Http.Headers;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
+using Microsoft.VisualBasic.FileIO;
 
 namespace SHJ.FileManager.Extentions;
 
 internal class UploadToolser
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="file"></param>
-    /// <param name="path"></param>
-    /// <returns></returns>
+
     public static DocumentRecord Upload(IFormFile file, string path)
     {
         string fileType = string.Empty;
         string fileName = string.Empty;
         string newFileName = string.Empty;
-
+        //
         fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
         var myUniqueFileName = Convert.ToString(Guid.NewGuid());
         var fileExtension = Path.GetExtension(fileName);
         newFileName = myUniqueFileName + fileExtension;
-
-
-        fileName = Path.Combine(Directory.GetCurrentDirectory(), path, newFileName);
+        //
+        fileName = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/" + path, newFileName);
         if (File.Exists(fileName))
         {
             File.Delete(fileName);
@@ -42,45 +37,95 @@ internal class UploadToolser
 
         return new DocumentRecord(newFileName, path, fileType, fileExtension);
     }
-
-    public static string UploadImageAndResize(IFormFile imageFile,
-              int height, int width, string path, string pathResize)
+    public static async Task<DocumentRecord> UploadAsync(IFormFile file, string path)
     {
-
-        string uniqCode = Guid.NewGuid().ToString().Replace("-", "");
-        if (imageFile.Length > 0)
+        string fileType = string.Empty;
+        string fileName = string.Empty;
+        string newFileName = string.Empty;
+        //
+        fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+        var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+        var fileExtension = Path.GetExtension(fileName);
+        newFileName = myUniqueFileName + fileExtension;
+        //
+        fileName = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/" + path, newFileName);
+        if (File.Exists(fileName))
         {
-            FileInfo fileInfo = new FileInfo(imageFile.FileName);
-            string getExt = fileInfo.Extension.ToLower();
-            string newFileName = "img_" + uniqCode + getExt;
-            string imgUrlSave = Path.Combine(path, newFileName);
-            string imgThumbUrlSave = Path.Combine(pathResize, newFileName);
-            using (var stream = new MemoryStream())
-            {
-                imageFile.CopyTo(stream);
-
-                using (FileStream fs = new FileStream(imgUrlSave, FileMode.Create, FileAccess.Write))
-                {
-                    imageFile.CopyTo(fs);
-                    stream.CopyTo(fs);
-                    fs.Flush();
-                }
-                var image = Image.Load(imageFile.OpenReadStream());
-                IImageEncoder imageEncoder = new JpegEncoder()
-                {
-                    Quality = 100,
-                    ColorType = JpegColorType.YCbCrRatio444,
-                };
-                image.Mutate(x => x.Resize(width, height));
-                image.Save(imgThumbUrlSave, imageEncoder);
-            }
-
-            return newFileName;
-
+            File.Delete(fileName);
         }
-        return "";
-    }
+        using (FileStream fs = File.Create(fileName))
+        {
+            await file.CopyToAsync(fs);
+            await fs.FlushAsync();
+            fileType = file.ContentType;
+        }
 
+        return new DocumentRecord(newFileName, path, fileType, fileExtension);
+    }
+    public static List<DocumentRecord> Upload(IList<IFormFile> files, string path)
+    {
+        var documents = new List<DocumentRecord>();
+        var fileName = string.Empty;
+        var newFileName = string.Empty;
+        string fileType = string.Empty;
+        foreach (var file in files)
+        {
+            if (file.Length > 0)
+            {
+                fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+                var FileExtension = Path.GetExtension(fileName);
+                newFileName = myUniqueFileName + FileExtension;
+                fileName = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/" + path, newFileName);
+                string fileExtension = Path.GetExtension(fileName);
+                if (File.Exists(fileName))
+                {
+                    File.Delete(fileName);
+                }
+                using (FileStream fs = System.IO.File.Create(fileName))
+                {
+                    file.CopyTo(fs);
+                    fs.Flush();
+                    fileType = file.ContentType;
+                }
+                documents.Add(new DocumentRecord(newFileName, path, fileType, fileExtension));
+            }
+        }
+
+        return documents;
+    }
+    public static async Task<List<DocumentRecord>> UploadAsync(IList<IFormFile> files, string path)
+    {
+        var documents = new List<DocumentRecord>();
+        var fileName = string.Empty;
+        var newFileName = string.Empty;
+        string fileType = string.Empty;
+        foreach (var file in files)
+        {
+            if (file.Length > 0)
+            {
+                fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+                var FileExtension = Path.GetExtension(fileName);
+                newFileName = myUniqueFileName + FileExtension;
+                fileName = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/" + path, newFileName);
+                string fileExtension = Path.GetExtension(fileName);
+                if (File.Exists(fileName))
+                {
+                    File.Delete(fileName);
+                }
+                using (FileStream fs = System.IO.File.Create(fileName))
+                {
+                    await file.CopyToAsync(fs);
+                    await fs.FlushAsync();
+                    fileType = file.ContentType;
+                }
+                documents.Add(new DocumentRecord(newFileName, path, fileType, fileExtension));
+            }
+        }
+
+        return documents;
+    }
 
     //___________________
     //public static DocumentRecord UploadByte(IFormFile file)

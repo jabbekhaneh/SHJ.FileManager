@@ -28,10 +28,17 @@ internal class SqlDocumentRepository : IDocumentRepository, IDisposable
             .InsertINTO(_options.TableName, _options.SchemaName), document);
     }
 
-    public void Dispose()
+
+    public async Task InsertManyAsync(List<DocumentRecord> documents)
     {
-        _connection.Close();
+        foreach (var document in documents)
+        {
+            await _connection.ExecuteAsync(DocumentCommandTexts
+            .InsertINTO(_options.TableName, _options.SchemaName), document);
+        }
     }
+
+    #region PrivateMethods
     private void ConnectedDatabase()
     {
         _connection.Open();
@@ -47,4 +54,10 @@ internal class SqlDocumentRepository : IDocumentRepository, IDisposable
         if (string.IsNullOrEmpty(options.DatabaseName))
             throw new ArgumentException("Filemanager:DatabaseName is null");
     }
+    #endregion
+    public void Dispose()
+    {
+        _connection.Close();
+    }
+
 }

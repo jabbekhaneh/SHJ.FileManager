@@ -29,38 +29,31 @@ internal class FileManagerService : IFileManagerService
         _environment = environment;
     }
 
-    public async Task<DocumentRecord> UploadInServer(IFormFile file)
-    {
-        var existDirectory = _environment.ContentRootPath + "wwwroot/";
-        if (!Directory.Exists(existDirectory))
-        {
-            Directory.CreateDirectory(existDirectory);
-        }
-        var document = UploadToolser.Upload(file, existDirectory);
-        document.SetUploadType(UploadType.InServer);
-        await _repository.InsertAsync(document);
-        return document;
-    }
 
-    public async Task<DocumentRecord> UploadInServer(IFormFile file, string path)
+    public async Task<DocumentRecord> UploadInServerAsync(IFormFile file, string path="")
     {
         var existDirectory = _environment.ContentRootPath + "wwwroot/" + path;
         if (!Directory.Exists(existDirectory))
         {
             Directory.CreateDirectory(existDirectory);
         }
-        var document = UploadToolser.Upload(file, existDirectory);
+        var document = await UploadToolser.UploadAsync(file, path);
         document.SetUploadType(UploadType.InServer);
         await _repository.InsertAsync(document);
         return document;
     }
 
-    public Task<List<DocumentRecord>> UploadInServer(List<IFormFile> files)
+   
+    public async Task<List<DocumentRecord>> UploadInServerAsync(List<IFormFile> files, string path="")
     {
-        throw new NotImplementedException();
-    }
-    public Task<List<DocumentRecord>> UploadInServer(List<IFormFile> files, string path)
-    {
-        throw new NotImplementedException();
+        var existDirectory = _environment.ContentRootPath + "wwwroot/" + path;
+        if (!Directory.Exists(existDirectory))
+        {
+            Directory.CreateDirectory(existDirectory);
+        }
+        var documents = await UploadToolser.UploadAsync(files, path);
+        documents.ForEach(_ => _.SetUploadType(UploadType.InServer));
+        await _repository.InsertManyAsync(documents);
+        return documents;
     }
 }

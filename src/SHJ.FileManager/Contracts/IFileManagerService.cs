@@ -9,29 +9,18 @@ public interface IFileManagerService
     /// 
     /// </summary>
     /// <param name="file"></param>
-    /// <returns></returns>
-    Task<DocumentRecord> UploadInServer(IFormFile file);
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="file"></param>
     /// <param name="path"></param>
     /// <returns></returns>
-    Task<DocumentRecord> UploadInServer(IFormFile file, string path);
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="files"></param>
-    /// <returns></returns>
-    Task<List<DocumentRecord>> UploadInServer(List<IFormFile> files);
+    Task<DocumentRecord> UploadInServerAsync(IFormFile file, string path = "");
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="files"></param>
     /// <param name="path"></param>
     /// <returns></returns>
-    Task<List<DocumentRecord>> UploadInServer(List<IFormFile> files, string path);
-    
+    Task<List<DocumentRecord>> UploadInServerAsync(List<IFormFile> files, string path = "");
+
     //--------
     //Task UploadInDatabase(IFormFile file);
     //Task UploadManyInDatabase(List<IFormFile> files);

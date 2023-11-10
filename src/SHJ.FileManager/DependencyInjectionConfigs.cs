@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SHJ.FileManager.Contracts;
 using SHJ.FileManager.Options;
 using SHJ.FileManager.SQL;
-
+using Microsoft.AspNetCore.StaticFiles;
 namespace SHJ.FileManager;
 
 public static class DependencyInjectionConfigs
@@ -13,7 +13,6 @@ public static class DependencyInjectionConfigs
     {
         services.Configure<FileManagerOptions>(option);
         services.AddScoped<IFileManagerService, FileManagerService>();
-        
         return services;
     }
 

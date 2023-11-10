@@ -22,4 +22,5 @@ public class DocumentCommandTexts
         $"                           (FileName,CreateDataTime,Path,FileByte,UploadType,FileExtension,FileType)" +
                             $"VALUES (@FileName,@CreateDataTime,@Path,@FileByte,@UploadType,@FileExtension,@FileType)";
 
+    
 }
